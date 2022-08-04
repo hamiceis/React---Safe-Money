@@ -18,7 +18,7 @@ Projeto Safe Money, aplicação feita para gerenciar o seu dinheiro de forma seg
 <li> React-icons </li><br>
 <li> react-router-dom V6 </li><br>
 
-## Projeto iniciado vite@latest
+## Projeto iniciado em vite@latest
 
 Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
