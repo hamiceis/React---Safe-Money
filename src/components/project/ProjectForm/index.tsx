@@ -16,19 +16,22 @@ type CategoriesProps = {
 
 export function ProjectForm({ btnText }: FormProps) {
 
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState<CategoriesProps[]>([])
 
     useEffect(() => {
-      fetch('http://localhost:5000/categories', {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => setCategories(data))
-      .catch(error => alert(error))
-  }, [])
+      async function fetchData(){
+        const response = await fetch('http://localhost:5000/categories', {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json'
+          }
+        })
+        const data = await response.json()
+        setCategories(data)
+      }
+
+      fetchData()
+    }, [])
 
   return (
     <Form>
