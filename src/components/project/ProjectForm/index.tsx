@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Input } from '../../Form/Input'
 import { Select } from '../../Form/Select'
 import { SubmitButton } from '../../Form/SubmitButton'
@@ -7,7 +8,28 @@ interface FormProps {
   btnText: string;
 }
 
+
+type CategoriesProps = {
+  id?: number;
+  name?: string
+}
+
 export function ProjectForm({ btnText }: FormProps) {
+
+  const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+      fetch('http://localhost:5000/categories', {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => setCategories(data))
+      .catch(error => alert(error))
+  }, [])
+
   return (
     <Form>
 
@@ -22,7 +44,7 @@ export function ProjectForm({ btnText }: FormProps) {
             name="budget" 
             placeholder="Insira o orçamento Total"
       />
-    <Select name="category_id" text="Selecione a categoria" /> 
+    <Select name="category_id" text="Selecione a categoria" options={categories}/> 
 
     <SubmitButton text={btnText} />
 

@@ -4,7 +4,7 @@ interface InputProps {
   text?: string;
   value?: string;
   name?: string;
-  options?: string;
+  options?: string[] | any;
   handleOnChange?: () => void;
 }
 
@@ -15,6 +15,11 @@ export function Select({text, name, options, handleOnChange, value}: InputProps)
       <label htmlFor={name}> {text}:</label>
       <select name={name} id={name}>
           <option>Selecione uma opção</option>
+          {options.map(({name, id}: any) => 
+            (
+              <option key={id} value={id}>{name}</option>
+            )
+          )}
       </select>
     </FormControl>
   )

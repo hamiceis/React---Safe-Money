@@ -10,7 +10,7 @@ export function Home(){
       </Title>
 
       <SubTitle>
-      Comece a gerenciar os seus projetos agora mesmo!
+        Comece a gerenciar os seus projetos agora mesmo!
       </SubTitle>
 
       <LinkButton  to="/newproject"  text="Criar Projeto"/>
