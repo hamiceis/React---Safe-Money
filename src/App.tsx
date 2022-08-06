@@ -24,6 +24,7 @@ function App() {
     <Route path="/projects" element={<Projects />} />
    </Routes>
    </Container>
+   
     <Footer />
     </>
   )

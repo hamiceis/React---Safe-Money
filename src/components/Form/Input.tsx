@@ -1,3 +1,4 @@
+import { ChangeEvent } from "react";
 import styled from "styled-components";
 
 interface InputProps {
@@ -6,7 +7,7 @@ interface InputProps {
   value?: string;
   name?: string;
   placeholder?: string;
-  handleOnChange?: () => void;
+  handleOnChange?: any;
 }
 
 

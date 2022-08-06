@@ -1,22 +1,28 @@
 import styled from "styled-components";
 
+interface OptionProps {
+  name: string;
+  id: number;
+}
+
 interface InputProps {
   text?: string;
-  value?: string;
+  value?: string | any;
   name?: string;
   options?: string[] | any;
-  handleOnChange?: () => void;
+  handleOnChange?: any;
 }
+
+
 
 
 export function Select({text, name, options, handleOnChange, value}: InputProps) {
   return (
     <FormControl>
       <label htmlFor={name}> {text}:</label>
-      <select name={name} id={name}>
+      <select name={name} id={name} onChange={handleOnChange} value={value || ''}>
           <option>Selecione uma opção</option>
-          {options.map(({name, id}: any) => 
-            (
+            {options.map(({name, id}: OptionProps) => (
               <option key={id} value={id}>{name}</option>
             )
           )}
