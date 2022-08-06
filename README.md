@@ -30,3 +30,6 @@ Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de
 
 `npm run dev`
 
+#Iniciar o JSON SERVER
+
+`npm run backend`
