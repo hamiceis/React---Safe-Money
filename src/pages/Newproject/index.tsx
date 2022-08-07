@@ -22,7 +22,8 @@ const createPost = (project: any) => {
     .then(data => {
       console.log(data)
       // Redirect
-      history('/projects')
+      history('/projects', { state: {message: 'Projeto criado com sucesso!'} })
+      
     })
     .catch(error => console.log(error))
 }
