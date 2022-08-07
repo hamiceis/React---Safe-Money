@@ -9,7 +9,7 @@ export interface Props {
 }
 
 
-export function Container ({ children } : Props ) {
+export function Container ({ children }: Props ) {
 
 return(
    <ContainerDiv >
