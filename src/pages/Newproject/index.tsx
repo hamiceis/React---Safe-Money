@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export function Newproject() {
 
-const history = useNavigate()
+const navigate = useNavigate()
 
 const createPost = (project: any) => {
     //Inicializa o SafeMoney e o servicos
@@ -22,7 +22,7 @@ const createPost = (project: any) => {
     .then(data => {
       console.log(data)
       // Redirect
-      history('/projects', { state: {message: 'Projeto criado com sucesso!'} })
+      navigate('/projects', { state: {message: 'Projeto criado com sucesso!'} })
       
     })
     .catch(error => console.log(error))
