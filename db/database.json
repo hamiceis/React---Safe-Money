@@ -1,5 +1,50 @@
 {
-  "projects": [ ],
+  "projects": [
+    {
+      "name": "Fuder até o talo",
+      "budget": "40000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "safemoney": 0,
+      "services": [],
+      "id": 1
+    },
+    {
+      "name": "ale",
+      "budget": "43242",
+      "category": {
+        "id": "2",
+        "name": "Design"
+      },
+      "safemoney": 0,
+      "services": [],
+      "id": 2
+    },
+    {
+      "name": "projeto teste1",
+      "budget": "432423423",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "safemoney": 0,
+      "services": [],
+      "id": 3
+    },
+    {
+      "name": "meu projeto 3",
+      "budget": "4324234",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "safemoney": 0,
+      "services": [],
+      "id": 4
+    }
+  ],
   "categories": [
     {
       "id": 1,

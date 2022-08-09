@@ -14,7 +14,8 @@ justify-content: space-between;
 margin: 0 auto;
 flex-wrap: wrap;
 
-min-height: ${props => props.height ? 100 : 75}%;
+
+min-height: ${props => `${props.height}%`};
 justify-content: ${props => props.start};
 flex-direction: ${props => props.column};
 `

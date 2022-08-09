@@ -12,7 +12,7 @@ export interface Props {
 export function Container ({ children }: Props ) {
 
 return(
-   <ContainerDiv >
+   <ContainerDiv height={75}>
     {children}
    </ContainerDiv>
   )
