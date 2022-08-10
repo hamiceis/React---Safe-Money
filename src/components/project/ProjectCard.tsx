@@ -1,16 +1,24 @@
 import styled from "styled-components"
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs'
 import { Link } from "react-router-dom";
+import { FormEvent } from "react";
 
 interface ProjectCardProps {
   id?: number;
   name?: string;
   budget?: string | number;
   category?: string;
-  handleRemove?: () => void;
+  handleRemove?: any;
 }
 
 export function ProjectCard ({ id, name, budget, category, handleRemove}: ProjectCardProps) {
+
+
+  const remove = (e: FormEvent) => {
+    e.preventDefault()
+    handleRemove(id)
+  }
+
   return (
     <ContainerCard>
       <h4>{name}</h4>
@@ -24,7 +32,7 @@ export function ProjectCard ({ id, name, budget, category, handleRemove}: Projec
         <Link to="/">
           <BsPencil /> Editar
         </Link>
-        <button>
+        <button onClick={remove}>
           <BsFillTrashFill /> Excluir
         </button>
       </CardActions>
