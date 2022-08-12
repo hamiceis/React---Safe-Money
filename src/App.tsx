@@ -14,11 +14,12 @@ import { Project } from './pages/project'
 function App() {
   return (
    <>
-   <Navbar />
+   <Navbar />  {/*Componente que armazena o nav, para trocar as paginas */}
 
-   <Container height={75}>
+   
+   <Container height={75}> {/*Componente que armazena todas as rotas */}
    <Routes >
-    <Route path="/" element={<Home />}/>
+    <Route path="/" element={<Home />}/> 
     <Route path="/contato" element={<Contato />} />
     <Route path="/empresa" element={<Empresa />} />
     <Route path="/newproject" element={<Newproject />} />
@@ -27,7 +28,7 @@ function App() {
    </Routes>
    </Container>
    
-    <Footer />
+    <Footer /> {/*Componente de Footer */}
     </>
   )
 }

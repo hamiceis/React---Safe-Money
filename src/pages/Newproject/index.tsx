@@ -11,17 +11,18 @@ const createPost = (project: any) => {
     project.safemoney = 0
     project.services = []
 
+    //Enviando um método POST por endpoint /projects
     fetch('http://localhost:5000/projects', {
       method: "POST",
       headers:{
         'Content-type': 'application/json'
       },
-      body: JSON.stringify(project),
+      body: JSON.stringify(project),     //Enviando no corpo o projeto em JSON.strigify
     })
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      // Redirect
+      // Redirect - Após criar o projeto vai ser redirecionado para pagina projects, enviando msg
       navigate('/projects', { state: {message: 'Projeto criado com sucesso!'} })
       
     })

@@ -25,8 +25,12 @@ export function Project() {
   const [type, setType] = useState<string>()
   const [showServiceForm, setShowServiceForm] = useState(false)
 
+
+  //Logica para buscar do endpoint o projeto pela ID
   useEffect(() => {
+
            try {
+              //setTimeOut para mostrar o SVG, simulando que está aguardando os dados do banco de dados    
             setTimeout(() => {
               async function fetchData(): Promise<void> {
                 const response = await fetch(`http://localhost:5000/projects/${id}`, {
@@ -56,7 +60,7 @@ export function Project() {
             setType('error')
             return false
           }
-
+          //Logica para editar um projeto
           async function fetchData() {
             const response = await fetch(`http://localhost:5000/projects/${project.id}`, {
               method: "PATCH",
@@ -68,7 +72,7 @@ export function Project() {
             const resp = await response.json()
             const data = await resp
 
-            setProject(data)
+            setProject(data)  //state que armazena os dados editados
             setShowProjectForm(false)
             setMessage('Projeto atualizado')
             setType('sucess')
@@ -76,11 +80,11 @@ export function Project() {
 
           fetchData()
   }
- 
+ //Logica para mostrar ou esconder o Formulário de Projeto
   const toggleProjectForm = () => {
       setShowProjectForm(!showProjectForm)
   }
-
+  //Logica para mostrar ou esconder o Formulário de Serviço
   const toggleServiceForm = () => {
       setShowServiceForm(!showServiceForm)
   }

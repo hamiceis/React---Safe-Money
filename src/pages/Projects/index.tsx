@@ -52,7 +52,7 @@ const [projectMessage, setProjectMessage] = useState('')
     }, 1000)
  },[])
 
-
+//Logica para remover o Projeto pelo id
  const removeProject = (id: string) => {
       fetch(`http://localhost:5000/projects/${id}`, {
         method: "DELETE",
