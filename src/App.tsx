@@ -9,6 +9,7 @@ import { Empresa } from './pages/Empresa'
 import { Home } from './pages/Home'
 import { Newproject } from './pages/Newproject'
 import { Projects } from './pages/Projects'
+import { Project } from './pages/project'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
     <Route path="/empresa" element={<Empresa />} />
     <Route path="/newproject" element={<Newproject />} />
     <Route path="/projects" element={<Projects />} />
+    <Route path="project/:id" element={<Project />} />
    </Routes>
    </Container>
    

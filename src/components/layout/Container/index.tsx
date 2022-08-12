@@ -3,16 +3,16 @@ import { ContainerDiv } from './styles.Container'
 
 export interface Props {
   height?: number | string;
-  start?: string 
+  content?: string 
   column?: string 
   children?: any;
 }
 
 
-export function Container ({ children }: Props ) {
+export function Container ({ height, column, content, children }: Props ) {
 
 return(
-   <ContainerDiv height={75}>
+   <ContainerDiv height={75 || height} content={content} column={column}>
     {children}
    </ContainerDiv>
   )

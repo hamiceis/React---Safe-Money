@@ -12,7 +12,7 @@ export function Navbar(){
   
   return (
     <NavbarStyle>
-    <Container height={100}>
+    <Container height={100} >
       <Link to="/">
         <LogoImg src={logo} alt="Logo do dindin" />
       </Link>

@@ -6,7 +6,7 @@ import { Message } from "../../components/layout/Message";
 import { Container } from "../../components/layout/Container";
 import { Loading } from '../../components/layout/Loading'
 import { LinkButton } from "../../components/layout/LinkButton";
-import { ContainerProject, TitleContainer } from './styled.Projects'
+import { ContainerProject, Title } from './styled.Projects'
 import { ProjectCard } from "../../components/project/ProjectCard"; 
 
 type Props = {
@@ -24,9 +24,9 @@ type PropsProject = {
 export function Projects () {
 
 const [projects, setProjects] = useState([])
-
 const [removeLoading, setRemoveLoading] = useState<Boolean>(false)
 const [projectMessage, setProjectMessage] = useState('')
+
 
  const location = useLocation()
  let message = ''
@@ -52,6 +52,7 @@ const [projectMessage, setProjectMessage] = useState('')
     }, 1000)
  },[])
 
+
  const removeProject = (id: string) => {
       fetch(`http://localhost:5000/projects/${id}`, {
         method: "DELETE",
@@ -66,17 +67,19 @@ const [projectMessage, setProjectMessage] = useState('')
       })
       .catch(error => console.log(error))
  }
+ 
 
   return(
     <ContainerProject>
-      <TitleContainer>
+    
+      <Title>
        <h1>Meus projetos</h1>
        <LinkButton to="/newproject" text="Criar Projeto" />
-      </TitleContainer>
+      </Title>
       {message && <Message msg={message} type="sucess"/>}
       {projectMessage && <Message type="sucess" msg={projectMessage}/>}
-
-      <Container  start="flex-start">
+    
+      <Container content='flex-start' >
          {projects.length > 0 && 
             projects.map((project: Props) => (
               <ProjectCard
